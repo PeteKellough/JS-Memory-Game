@@ -1,0 +1,54 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box
+}
+body{
+  height: 100%;
+  display: flex;
+  background: center/cover no-repeat url(https://media.gettyimages.com/photos/simple-green-felt-background-picture-id96655837?b=1&k=6&m=96655837&s=612x612&w=0&h=8s3odiAjaagl-c7JQNYDAMyG52kv5pTXvcmxlz4FRBs=);
+}
+.memory-game{
+  margin: auto;
+  width:680px;
+  height:680px;
+  display: flex;
+  flex-wrap: wrap;
+  border:;
+  perspective: 1000px;
+}
+.memory-card{
+  margin: 5px;
+  width:calc(25% - 10px);
+  height:calc(33.333% - 10px);
+  position: relative;
+  border:;
+  transform: scale (1);
+  transform-style:preserve-3d;
+  transition: transform .5s;
+}
+.memory-card:active{
+  transform: scale(.97);
+  transition: transform .2s;
+}
+.memory-card.flip{
+  transform:rotateY(180deg);
+}
+.rear-face,
+.front-face{
+  position: absolute;
+  width:100%;
+  height: 100%;
+  padding: 20px;
+  border-radius: 8px;
+  border:;
+ 
+  backface-visibility: hidden;
+}
+.front-face{
+  transform:rotateY(180deg);
+  background: #FBFCFC;
+}
+.rear-face{
+ background: center / contain no-repeat url(http://www.jimknapp.com/Cards/Non-Bicycle_files/image052.jpg);
+}
